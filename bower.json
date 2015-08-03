@@ -1,0 +1,16 @@
+{
+  "name": "swot",
+  "version": "1.0.0",
+  "authors": [
+    "Roman Kos <win.maklin@gmail.com>"
+  ],
+  "description": "SWOT analysis online",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
