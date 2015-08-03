@@ -7,9 +7,8 @@ var gulp = require('gulp'),
 
 gulp.task('jade', 'html preprocessor - jade, we do it NICE', function() { 
 
-  var src = [];
-  src.push(globals.src.jade + '404.jade');
-
+  var src = [globals.src.jade + '**/*.jade'];
+  console.log(src);
   return gulp.src(src)
     .pipe(plumber())
     .pipe(data({
