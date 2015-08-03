@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "SWOT analysis online",
   "main": "Gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/conmute/SWOT-analysis.git"
+  },
   "scripts": {
     "test": "gulp test"
   },
