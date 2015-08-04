@@ -4,11 +4,17 @@ head
   meta(charset="UTF-8")
   title Document
   link(rel="stylesheet" href="/css/#{assets.app.css}")
+  script(src="https://code.jquery.com/jquery-2.1.4.min.js")
   script(src="/js/#{assets.app.js}")
 body
+
   #root
 
     header.root
+
+      a.toggle-aside(onclick="showCharm('left')")
+        span.mif-menu
+
       a.logo(href="/") SWOT:
       h1.name
         | <span>S</span>trengths,
@@ -16,9 +22,9 @@ body
         | <span>O</span>pportunities
         | and
         | <span>T</span>hreats
-        | online analysis
+        | <small>online analysis</small>
 
-    aside.root
+    aside.root(data-role="charm" data-position="left" id="left-charm")
 
       header Available sheets:
 
@@ -42,6 +48,13 @@ body
         a.size6.import.button.small-button(href="#")
           span.mif-file-upload
           | Import
+
+
+      footer.root
+
+        p.copy
+          | Developed by&nbsp;
+          a(href="http://www.conmute.com" target="_blank") conmute.com
 
     section.root
 
@@ -90,10 +103,3 @@ body
               li E-books and e-book readers eliminate need for physical books
               li Younger generations don`t read as much
               li Nearby public library reopened after 2-year remodel
-
-
-    footer.root
-
-      p.copy
-        | Developed by
-        a(href="#") conmute.com

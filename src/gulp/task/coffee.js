@@ -49,7 +49,12 @@ include_from_bower = [
   './bower_components/ace-builds/src-min-noconflict/ace.js',
   './bower_components/ace-builds/src-min-noconflict/ace.js',
   './bower_components/ace-builds/src-noconflict/theme-github.js',
-  './bower_components/ace-builds/src-noconflict/mode-markdown.js'
+  './bower_components/ace-builds/src-noconflict/mode-markdown.js',
+  './bower_components/metro/js/requirements.js',
+  './bower_components/metro/js/global.js',
+  './bower_components/metro/js/widget.js',
+  './bower_components/metro/js/initiator.js',
+  './bower_components/metro/js/widgets/charm.js'
   // './bower_components/Hyphenator/Hyphenator.js',
   // './bower_components/Hyphenator/patterns/en-us.js',
   // './bower_components/Hyphenator/patterns/uk.js'

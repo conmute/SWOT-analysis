@@ -7,8 +7,7 @@ header.root {
   a.logo {
     float: left;
     display: block;
-    // width: 5.5rem;
-    width: 300px;
+    width: 5.5rem;
     font-size: 1.875rem/1.1;
     padding: .625rem 1.225rem .625rem .625rem;
     color: black;
@@ -18,10 +17,21 @@ header.root {
   }
   h1.name {
     font-size: 1.875rem/1.1;
-    // padding-left: 6.1rem;
-    padding-left: 300px;
+    padding-left: 6.1rem;
     text-align: center;
     color: @grayLight;
+    small {
+      white-space: nowrap;
+    }
+  }
+  .toggle-aside {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    font-size: 2rem;
+    padding: .625rem;
+    color: @grayLight;
+    cursor: pointer;
   }
 }
 
@@ -29,8 +39,27 @@ aside.root {
   width: 300px;
   float: left;
   padding: .625rem 1.225rem .625rem .625rem;
-  position: relative;
   z-index: 1;
+  display: none;
+  background-color: white;
+  color: @black;
+  border-right: 1px solid @grayLighter;
+  box-shadow: 0 2px 4px rgba(0,0,0,.35);
+  .charm-closer {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    line-height: 1.4rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+    top: 0;
+    right: 0;
+    font-size: 1.4rem;
+    &:hover, &:focus, &:active {
+      color: @gray;
+    }
+  }
   header {
     &:extend(.alt-header);
     padding: 0rem 23px;
@@ -39,22 +68,15 @@ aside.root {
   }
 }
 section.root {
-  padding-left: 300px;
-  height: 100vh;
-  margin-top: -3.1rem;
+  padding-left: 0;
   position: relative;
-  padding-top: 3.1rem;
   .wrap {
-    position: absolute;
-    top: 3.1rem;
-    left: 300px;
-    bottom: 0;
-    right: 0;
     .internal-label, .external-label {
       color: @grayLight;
       position: absolute;
       width: 1rem;
       left: 0;
+      display: none;
       &:before {
         content: attr(data-text);;
         .rotate(-90deg);
@@ -68,6 +90,7 @@ section.root {
         text-align: right;
         height: 1rem;
         line-height: 1rem;
+        z-index: 2;
       }
     }
     .internal-label {
@@ -80,9 +103,6 @@ section.root {
     }
   }
   .internal, .external {
-    position: absolute;
-    width: 50%;
-    height: 50%;
     header {
       &:extend(.alt-header);
       text-align: center;
@@ -138,7 +158,69 @@ section.root {
   }
 }
 footer.root {
-  display: none;
+  font-size: 0.6rem;
+  text-align: right;
+  color: @grayLight;
+}
+
+@media screen and (min-width: 640px) {
+  section.root {
+    .wrap {
+      padding-top: 2rem;
+    }
+    .clearfix();
+    .internal, .external {
+      width: 50%;
+      float: left;
+      min-height: 300px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header.root {
+    a.logo {
+      width: 300px;
+    }
+    h1.name {
+      padding-left: 300px;
+    }
+    .toggle-aside {
+      display: none;
+    }
+  }
+  aside.root {
+    position: relative;
+    display: block !important;
+    box-shadow: none;
+    border-right: none;
+    width: 300px !important;
+    left: 0 !important;
+    .toggle-aside, .charm-closer {
+      display: none;
+    }
+  }
+  section.root {
+    padding-left: 300px;
+    margin-top: -3.1rem;
+    padding-top: 3.1rem;
+    height: 100vh;
+    .wrap {
+      left: 300px;
+      position: absolute;
+      top: 3.1rem;
+      bottom: 0;
+      right: 0;
+      .internal-label, .external-label {
+        display: block;
+      }
+    }
+    .internal, .external {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+    }
+  }
 }
 
 .button-group {
