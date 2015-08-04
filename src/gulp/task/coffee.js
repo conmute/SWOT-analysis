@@ -45,6 +45,11 @@ var check_existance_missing = function (array_of_urls) {
 };
 
 include_from_bower = [
+  './bower_components/markdown/lib/markdown.js',
+  './bower_components/ace-builds/src-min-noconflict/ace.js',
+  './bower_components/ace-builds/src-min-noconflict/ace.js',
+  './bower_components/ace-builds/src-noconflict/theme-github.js',
+  './bower_components/ace-builds/src-noconflict/mode-markdown.js'
   // './bower_components/Hyphenator/Hyphenator.js',
   // './bower_components/Hyphenator/patterns/en-us.js',
   // './bower_components/Hyphenator/patterns/uk.js'

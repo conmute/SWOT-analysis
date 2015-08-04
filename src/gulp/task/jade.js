@@ -12,7 +12,8 @@ gulp.task('jade', 'html preprocessor - jade, we do it NICE', function() { 
   return gulp.src(src)
     .pipe(plumber())
     .pipe(data({
-        assets: globals.var.assets
+      example: globals.data.example,
+      assets: globals.var.assets
     }))
     .pipe(jade({
       pretty: true

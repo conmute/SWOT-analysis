@@ -3,5 +3,43 @@ html(lang="en")
 head
   meta(charset="UTF-8")
   title Document
+  script(src="js/app.js")
 body
-  h1 Document
+  h1 Examples
+
+  h2 Markdown
+
+  textarea(id="text-input" oninput="this.editor.update()" rows="6" cols="60")
+    | Type **Markdown** here.
+  div#preview
+
+  script.
+    function Editor(input, preview) {
+      this.update = function () {
+        preview.innerHTML = markdown.toHTML(input.value);
+      };
+      input.editor = this;
+      this.update();
+    }
+    var $ = function (id) { return document.getElementById(id); };
+    new Editor($("text-input"), $("preview"));
+
+  h2 Ace editor
+
+  div#editor= example.content
+
+  style.
+    #editor {
+      position: relative;
+      width: 500px;
+      height: 400px;
+    }
+  script.
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/github");
+    var MarkdownMode = ace.require("ace/mode/markdown").Mode;
+    editor.getSession().setMode(new MarkdownMode());
+    editor.renderer.setShowGutter(false);
+    editor.setOptions({
+      fontSize: "15px"
+    });

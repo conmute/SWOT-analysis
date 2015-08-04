@@ -23,7 +23,7 @@ var watchIt = function(files, taskNames) {
 
 var taskDescription = 'watch changes, and trigger propriate tasks';
 
-gulp.task('watch', taskDescription, ['default'], function() {
+gulp.task('watch', taskDescription, ['default', 'webserver'], function() {
 
   watchIt(globals.src.less + '**/*.less', 'less');
   watchIt(globals.src.coffee + '**/*.coffee', 'coffee');

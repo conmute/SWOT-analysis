@@ -1,0 +1,158 @@
+@import "lib/metro/metro.less";
+
+header.root {
+  .clearfix();
+  position: relative;
+  z-index: 1;
+  a.logo {
+    float: left;
+    display: block;
+    // width: 5.5rem;
+    width: 300px;
+    font-size: 1.875rem/1.1;
+    padding: .625rem;
+    color: black;
+    text-align: right;
+    box-sizing: border-box;
+    color: @grayLight;
+  }
+  h1.name {
+    font-size: 1.875rem/1.1;
+    // padding-left: 6.1rem;
+    padding-left: 300px;
+    text-align: center;
+    color: @grayLight;
+  }
+}
+
+aside.root {
+  width: 300px;
+  float: left;
+  padding: .625rem;
+  position: relative;
+  z-index: 1;
+  header {
+    &:extend(.alt-header);
+    padding: 0rem 23px;
+    line-height: 2rem;
+    border-bottom: 1px solid @grayLighter;
+  }
+}
+section.root {
+  padding-left: 300px;
+  height: 100vh;
+  margin-top: -3.1rem;
+  position: relative;
+  padding-top: 3.1rem;
+  .wrap {
+    position: absolute;
+    top: 3.1rem;
+    left: 300px;
+    bottom: 0;
+    right: 0;
+    .internal-label, .external-label {
+      color: @grayLight;
+      position: absolute;
+      width: 1rem;
+      left: 0;
+      &:before {
+        content: attr(data-text);;
+        .rotate(-90deg);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-left: -1.5rem;
+      }
+    }
+    .internal-label {
+      top: 0;
+      bottom: 50%;
+    }
+    .external-label {
+      top: 50%;
+      bottom: 0%;
+    }
+  }
+  .internal, .external {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    header {
+      &:extend(.alt-header);
+      text-align: center;
+      color: white;
+      padding: .625rem 0;
+      border-bottom: 1px solid transparent;
+      margin: 0 .625rem;
+      span {
+        font-weight: bold;
+        font-size: 125%;
+        margin-right: 2px;
+        display: inline-block;
+      }
+    }
+    article {
+      @import "part/article/list.less";
+    }
+  }
+  .block-color(@color) {
+    header {
+      border-color: @color;
+      color: @color;
+    }
+    article {
+      ul li:before, ol li:before {
+        color: @color;
+      }
+    }
+  }
+  .internal {
+    &.positive {
+      top: 0;
+      left: 0;
+      .block-color(@emerald);
+    }
+    &.negative {
+      top: 0;
+      left: 50%;
+      .block-color(@orange);
+    }
+  }
+  .external {
+    &.positive {
+      top: 50%;
+      left: 0;
+      .block-color(@lightOlive);
+    }
+    &.negative {
+      top: 50%;
+      left: 50%;
+      .block-color(@amber);
+    }
+  }
+}
+footer.root {
+  display: none;
+}
+
+.button-group {
+  width: 100%;
+  display: table;
+  .button {
+    display: table-cell;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    &:hover, &:active, &:focus {
+      z-index: 1;
+    }
+  }
+}
+
+.button.create-new {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}

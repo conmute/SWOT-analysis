@@ -5,8 +5,10 @@ var gulp = require('gulp'),
 
 gulp.task('fonts', function() { 
 
-  // return gulp.src(globals.src.fonts + '**/*.*')
-  //   .pipe(plumber())
-  //   .pipe(gulp.dest(globals.dist.fonts)); 
+  fonts = ["./bower_components/metro/fonts/**/*.*"]
+
+  return gulp.src(fonts)
+    .pipe(plumber())
+    .pipe(gulp.dest(globals.dist.fonts)); 
 
 });

@@ -1,0 +1,62 @@
+ul {
+  .unstyled-list;
+  counter-reset:li;
+  padding-left: 1rem;
+  margin-left: .625rem;
+  color: @textColor;
+
+  li {
+    position:relative;
+    padding: 4px 12px;
+    list-style:none;
+    color: inherit;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      margin-top: -.8rem;
+      left: -.625rem;
+      color: @lightCyan;
+      font-size: 2rem;
+      vertical-align: middle;
+            .square(1.25rem);
+            line-height: 1.25rem;
+    }
+  }
+
+  ul {
+    margin: 4px .5em 0;
+  }
+}
+
+ul {
+  & > li:before {
+    content: "\2022";
+  }
+
+  ul li:before {
+    content: "\00B7";
+  }
+}
+
+
+ol {
+  padding-left: 1rem;
+  margin-left: .625rem;
+  list-style-type: none;
+  counter-reset:li;
+
+  & > li {
+    position: relative;
+    padding: 4px 12px;
+    vertical-align: top;
+  }
+
+  & > li:before {
+    position: absolute;
+    content:counter(li);
+    counter-increment:li;
+    color: @grayLight;
+    left: -0.625rem;
+  }
+}

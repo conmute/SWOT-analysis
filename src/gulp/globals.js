@@ -12,6 +12,9 @@ module.exports = {
     coffee: 'src/coffee/',
     jade: 'src/jade/'
   },
+  data: {
+    example: JSON.parse(fs.readFileSync("data/example.json", "utf8"))
+  },
   var: {
     template: {
       app: 'app.jade',

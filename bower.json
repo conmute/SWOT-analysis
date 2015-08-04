@@ -12,5 +12,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "markdown": "~0.5.0",
+    "ace-builds": "~1.2.0",
+    "metro": "~3.0.9"
+  }
 }

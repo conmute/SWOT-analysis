@@ -1,0 +1,99 @@
+doctype
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Document
+  link(rel="stylesheet" href="/css/#{assets.app.css}")
+  script(src="/js/#{assets.app.js}")
+body
+  #root
+
+    header.root
+      a.logo(href="/") SWOT:
+      h1.name
+        | <span>S</span>trengths,
+        | <span>W</span>eaknesses,
+        | <span>O</span>pportunities
+        | and
+        | <span>T</span>hreats
+        | online analysis
+
+    aside.root
+
+      header Available sheets:
+
+      .listview-outlook
+        .list
+          a.list-content
+            span.list-title Bookstore
+            span.list-subtitle Bookstore in a university town
+            span.list-remark unsaved
+
+      button.button.small-button.create-new
+        span.mif-plus
+        |  Create new
+
+      div.button-group
+
+        a.size6.save.button.small-button(href="#")
+          span.mif-file-download
+          | Save
+
+        a.size6.import.button.small-button(href="#")
+          span.mif-file-upload
+          | Import
+
+    section.root
+
+      .wrap
+
+        .internal-label(data-text="internal")
+        .external-label(data-text="external")
+
+        section.internal.positive
+          header <span>S</span>trengths
+          article
+            ul
+              li Our workers are well-educated students who love books
+              li The space us attratuve abd ibviting
+              li Long-term lease is at low rate
+              li Customers are suppportive of small bookstores
+              li Popular cafe makes it easy for customers to linger and find something to buy
+
+
+        section.internal.negative
+          header <span>W</span>eaknesses
+          article
+            ol
+              li Space is tight
+              li Bank gave us a limited line of credit
+              li Health insurance costs are rising
+              li Business is slower during summer vacation
+              li Inventory system needs to be upgraded
+              li High staff turnover due to studens graduating
+
+        section.external.positive
+          header <span>O</span>pportunities
+          article
+            ol
+              li We can have local authors give lectures and book signings
+              li We can make personalaized recommendations to long-term customers
+              li We can deliver the same-day to mobility-impaired customers
+              li We can features things that appeal to summer tourists
+              li We can start a frequent buyer program
+
+        section.external.negative
+          header <span>T</span>hreats
+          article
+            ul
+              li Large chains have more buying power
+              li E-books and e-book readers eliminate need for physical books
+              li Younger generations don`t read as much
+              li Nearby public library reopened after 2-year remodel
+
+
+    footer.root
+
+      p.copy
+        | Developed by
+        a(href="#") conmute.com
