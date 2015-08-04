@@ -2,7 +2,7 @@ doctype
 html(lang="en")
 head
   meta(charset="UTF-8")
-  title Document
+  title= lang.site.title
   link(rel="stylesheet" href="/css/#{assets.app.css}")
   script(src="https://code.jquery.com/jquery-2.1.4.min.js")
   script(src="/js/#{assets.app.js}")
@@ -17,44 +17,38 @@ body
 
       a.logo(href="/") SWOT:
       h1.name
-        | <span>S</span>trengths,
-        | <span>W</span>eaknesses,
-        | <span>O</span>pportunities
-        | and
-        | <span>T</span>hreats
-        | <small>online analysis</small>
+        | #{example.sheets[0].title} &nbsp;
+        small= example.sheets[0].description
 
     aside.root(data-role="charm" data-position="left" id="left-charm")
 
-      header Available sheets:
+      header= lang.heading.aside
 
       .listview-outlook
         .list
-          a.list-content
-            span.list-title Bookstore
-            span.list-subtitle Bookstore in a university town
-            span.list-remark unsaved
+          each sheet in example.sheets
+            a.list-content
+              span.list-title= sheet.title
+              //- span.list-subtitle= sheet.description
+              span.list-remark= sheet.description
 
       button.button.small-button.create-new
-        span.mif-plus
-        |  Create new
+        span.mif-plus &nbsp;
+        | #{lang.button.create_new}
 
       div.button-group
 
         a.size6.save.button.small-button(href="#")
-          span.mif-file-download
-          | Save
+          span.mif-file-download &nbsp;
+          | #{lang.button.save}
 
         a.size6.import.button.small-button(href="#")
-          span.mif-file-upload
-          | Import
-
+          span.mif-file-upload &nbsp;
+          | #{lang.button.import}
 
       footer.root
 
-        p.copy
-          | Developed by&nbsp;
-          a(href="http://www.conmute.com" target="_blank") conmute.com
+        p.copy!= lang.site.copyrights
 
     section.root
 
@@ -65,41 +59,41 @@ body
 
         section.internal.positive
           header <span>S</span>trengths
-          article
-            ul
-              li Our workers are well-educated students who love books
-              li The space us attratuve abd ibviting
-              li Long-term lease is at low rate
-              li Customers are suppportive of small bookstores
-              li Popular cafe makes it easy for customers to linger and find something to buy
+          article!= example.sheets[0].internal.positive
+            //- ul
+            //-   li Our workers are well-educated students who love books
+            //-   li The space us attratuve abd ibviting
+            //-   li Long-term lease is at low rate
+            //-   li Customers are suppportive of small bookstores
+            //-   li Popular cafe makes it easy for customers to linger and find something to buy
 
 
         section.internal.negative
           header <span>W</span>eaknesses
-          article
-            ol
-              li Space is tight
-              li Bank gave us a limited line of credit
-              li Health insurance costs are rising
-              li Business is slower during summer vacation
-              li Inventory system needs to be upgraded
-              li High staff turnover due to studens graduating
+          article!= example.sheets[0].internal.negative
+            //- ol
+            //-   li Space is tight
+            //-   li Bank gave us a limited line of credit
+            //-   li Health insurance costs are rising
+            //-   li Business is slower during summer vacation
+            //-   li Inventory system needs to be upgraded
+            //-   li High staff turnover due to studens graduating
 
         section.external.positive
           header <span>O</span>pportunities
-          article
-            ol
-              li We can have local authors give lectures and book signings
-              li We can make personalaized recommendations to long-term customers
-              li We can deliver the same-day to mobility-impaired customers
-              li We can features things that appeal to summer tourists
-              li We can start a frequent buyer program
+          article!= example.sheets[0].external.positive
+            //- ol
+            //-   li We can have local authors give lectures and book signings
+            //-   li We can make personalaized recommendations to long-term customers
+            //-   li We can deliver the same-day to mobility-impaired customers
+            //-   li We can features things that appeal to summer tourists
+            //-   li We can start a frequent buyer program
 
         section.external.negative
           header <span>T</span>hreats
-          article
-            ul
-              li Large chains have more buying power
-              li E-books and e-book readers eliminate need for physical books
-              li Younger generations don`t read as much
-              li Nearby public library reopened after 2-year remodel
+          article!= example.sheets[0].external.negative
+            //- ul
+            //-   li Large chains have more buying power
+            //-   li E-books and e-book readers eliminate need for physical books
+            //-   li Younger generations don`t read as much
+            //-   li Nearby public library reopened after 2-year remodel

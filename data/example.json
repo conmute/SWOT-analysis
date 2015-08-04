@@ -1,3 +1,18 @@
 {
+    "lang": "en",
+    "sheets": [
+        {
+            "title": "Strengths, Weaknesses, Opportunities and Threats",
+            "description": "online analysis",
+            "internal": {
+                "positive": "<ul>\n<li>Our workers are well-educated students who love books</li>\n<li>The space us attratuve abd ibviting</li>\n<li>Long-term lease is at low rate</li>\n<li>Customers are suppportive of small bookstores</li>\n<li>Popular cafe makes it easy for customers to linger and find something to buy</li>\n</ul>",
+                "negative": "<ol>\n<li>Space is tight</li>\n<li>Bank gave us a limited line of credit</li>\n<li>Health insurance costs are rising</li>\n<li>Business is slower during summer vacation</li>\n<li>Inventory system needs to be upgraded</li>\n<li>High staff turnover due to studens graduating</li>\n</ol>"
+            },
+            "external": {
+                "positive": "<ol>\n<li>We can have local authors give lectures and book signings</li>\n<li>We can make personalaized recommendations to long-term customers</li>\n<li>We can deliver the same-day to mobility-impaired customers</li>\n<li>We can features things that appeal to summer tourists</li>\n<li>We can start a frequent buyer program</li>\n</ol>",
+                "negative": "<ul>\n<li>Large chains have more buying power</li>\n<li>E-books and e-book readers eliminate need for physical books</li>\n<li>Younger generations don`t read as much</li>\n<li>Nearby public library reopened after 2-year remodel</li></ul>"
+            }
+        }
+    ],
     "content": "Type **Markdown** here.\n\n# Custom header\n\n[a link](http://google.com)"
 }

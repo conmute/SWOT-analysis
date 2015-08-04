@@ -1,0 +1,14 @@
+{
+    "site": {
+        "title": "Strengths, Weaknesses, Opportunities and Threats. Online analysis",
+        "copyrights": "Developed by&nbsp;<a href=\"http://www.conmute.com\" target=\"_blank\">conmute.com</a>"
+    },
+    "heading": {
+        "aside": "Available sheets:"
+    },
+    "button": {
+        "create_new": "Create new",
+        "save": "Save",
+        "import": "Import"
+    }
+}
