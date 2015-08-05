@@ -1,5 +1,19 @@
 @import "lib/metro/metro.less";
 
+// Mixins
+
+.block-color(@color) {
+  header {
+    border-color: @color;
+    color: @color;
+  }
+  article {
+    ul li:before, ol li:before {
+      color: @color;
+    }
+  }
+}
+
 header.root {
   .clearfix();
   position: relative;
@@ -37,6 +51,7 @@ header.root {
 
 aside.root {
   width: 300px;
+  max-width: 300px;
   float: left;
   padding: .625rem 1.225rem .625rem .625rem;
   z-index: 1;
@@ -103,6 +118,7 @@ section.root {
     }
   }
   .internal, .external {
+    position: relative;
     header {
       &:extend(.alt-header);
       text-align: center;
@@ -117,42 +133,38 @@ section.root {
         display: inline-block;
       }
     }
+    .editor {
+      display: none;
+      height: 230px;
+      margin: 1rem;
+    }
     article {
+      display: block;
+      margin: 1rem;
       @import "part/article/list.less";
     }
-  }
-  .block-color(@color) {
-    header {
-      border-color: @color;
-      color: @color;
-    }
-    article {
-      ul li:before, ol li:before {
-        color: @color;
+    &.focused {
+      .editor {
+        display: block;
+      }
+      article {
+        display: none;
       }
     }
   }
   .internal {
     &.positive {
-      top: 0;
-      left: 0;
       .block-color(@emerald);
     }
     &.negative {
-      top: 0;
-      left: 50%;
       .block-color(@orange);
     }
   }
   .external {
     &.positive {
-      top: 50%;
-      left: 0;
       .block-color(@lightOlive);
     }
     &.negative {
-      top: 50%;
-      left: 50%;
       .block-color(@amber);
     }
   }
@@ -173,6 +185,17 @@ footer.root {
       width: 50%;
       float: left;
       min-height: 300px;
+      .editor {
+        margin: 0.5rem 0 0 0;
+        position: absolute;
+        top: 47px;
+        left: 1em;
+        right: 1em;
+        bottom: 0;
+      }
+      article {
+        margin: 0.5rem 1rem;
+      }
     }
   }
 }
@@ -219,6 +242,26 @@ footer.root {
       position: absolute;
       width: 50%;
       height: 50%;
+    }
+    .internal {
+      &.positive {
+        top: 0;
+        left: 0;
+      }
+      &.negative {
+        top: 0;
+        left: 50%;
+      }
+    }
+    .external {
+      &.positive {
+        top: 50%;
+        left: 0;
+      }
+      &.negative {
+        top: 50%;
+        left: 50%;
+      }
     }
   }
 }

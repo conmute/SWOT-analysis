@@ -1,7 +1,8 @@
 doctype
 html(lang="en")
 head
-  meta(charset="UTF-8")
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
   title= lang.site.title
   link(rel="stylesheet" href="/css/#{assets.app.css}")
   script(src="https://code.jquery.com/jquery-2.1.4.min.js")
@@ -59,7 +60,8 @@ body
 
         section.internal.positive
           header <span>S</span>trengths
-          article!= example.sheets[0].internal.positive
+          div.editor!= example.sheets[0].internal.positive
+          article
             //- ul
             //-   li Our workers are well-educated students who love books
             //-   li The space us attratuve abd ibviting
@@ -70,7 +72,8 @@ body
 
         section.internal.negative
           header <span>W</span>eaknesses
-          article!= example.sheets[0].internal.negative
+          div.editor!= example.sheets[0].internal.negative
+          article
             //- ol
             //-   li Space is tight
             //-   li Bank gave us a limited line of credit
@@ -81,7 +84,8 @@ body
 
         section.external.positive
           header <span>O</span>pportunities
-          article!= example.sheets[0].external.positive
+          div.editor!= example.sheets[0].external.positive
+          article
             //- ol
             //-   li We can have local authors give lectures and book signings
             //-   li We can make personalaized recommendations to long-term customers
@@ -91,7 +95,8 @@ body
 
         section.external.negative
           header <span>T</span>hreats
-          article!= example.sheets[0].external.negative
+          div.editor!= example.sheets[0].external.negative
+          article
             //- ul
             //-   li Large chains have more buying power
             //-   li E-books and e-book readers eliminate need for physical books

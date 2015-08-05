@@ -5,12 +5,12 @@
             "title": "Strengths, Weaknesses, Opportunities and Threats",
             "description": "online analysis",
             "internal": {
-                "positive": "<ul>\n<li>Our workers are well-educated students who love books</li>\n<li>The space us attratuve abd ibviting</li>\n<li>Long-term lease is at low rate</li>\n<li>Customers are suppportive of small bookstores</li>\n<li>Popular cafe makes it easy for customers to linger and find something to buy</li>\n</ul>",
-                "negative": "<ol>\n<li>Space is tight</li>\n<li>Bank gave us a limited line of credit</li>\n<li>Health insurance costs are rising</li>\n<li>Business is slower during summer vacation</li>\n<li>Inventory system needs to be upgraded</li>\n<li>High staff turnover due to studens graduating</li>\n</ol>"
+                "positive": "* Our workers are well-educated students who love books\n* The space us attratuve abd ibviting\n* Long-term lease is at low rate\n* Customers are suppportive of small bookstores\n* Popular cafe makes it easy for customers to linger and find something to buy",
+                "negative": "1. Space is tight\n2. Bank gave us a limited line of credit\n3. Health insurance costs are rising\n4. Business is slower during summer vacation\n5. Inventory system needs to be upgraded\n6. High staff turnover due to studens graduating"
             },
             "external": {
-                "positive": "<ol>\n<li>We can have local authors give lectures and book signings</li>\n<li>We can make personalaized recommendations to long-term customers</li>\n<li>We can deliver the same-day to mobility-impaired customers</li>\n<li>We can features things that appeal to summer tourists</li>\n<li>We can start a frequent buyer program</li>\n</ol>",
-                "negative": "<ul>\n<li>Large chains have more buying power</li>\n<li>E-books and e-book readers eliminate need for physical books</li>\n<li>Younger generations don`t read as much</li>\n<li>Nearby public library reopened after 2-year remodel</li></ul>"
+                "positive": "1. We can have local authors give lectures and book signings\n2. We can make personalaized recommendations to long-term customers\n3. We can deliver the same-day to mobility-impaired customers\n4. We can features things that appeal to summer tourists\n5. We can start a frequent buyer program",
+                "negative": "* Large chains have more buying power\n* E-books and e-book readers eliminate need for physical books\n* Younger generations don`t read as much\n* Nearby public library reopened after 2-year remodel"
             }
         }
     ],
