@@ -1,3 +1,43 @@
 {
-
+    "site": {
+        "title": "Strengths, Weaknesses, Opportunities and Threats. Online analysis",
+        "copyrights": "Створено завдяки <a href=\"http://www.conmute.com\" target=\"_blank\">conmute.com</a>"
+    },
+    "heading": {
+        "aside": "Доступні аркуші:"
+    },
+    "button": {
+        "create_new": "Створити новий",
+        "save": "Зберегти",
+        "import": "Імпортувати",
+        "delete": "Видалити",
+        "edit_title": "Змінити назву"
+    },
+    "section_title": {
+        "internal": {
+            "positive": "<span>С</span>ильні сторони",
+            "negative": "<span>С</span>лабкості"
+        },
+        "external": {
+            "positive": "<span>М</span>ожливості",
+            "negative": "<span>З</span>агрози"
+        }
+    },
+    "form": {
+        "header": {
+            "create": "Створити новий аркуш",
+            "edit": "Змінити назву аркуша"
+        },
+        "title": {
+            "label": "Заголовок",
+            "informer": "Бажане ім’я аркуша",
+            "placeholder": "Введіть назву"
+        },
+        "description": {
+            "label": "Опис аркушу",
+            "informer": "Коротка довідка",
+            "placeholder": "Введіть опис"
+        },
+        "submit": "Підтвердити"
+    }
 }

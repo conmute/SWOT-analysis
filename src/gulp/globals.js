@@ -13,9 +13,13 @@ module.exports = {
     jade: 'src/jade/'
   },
   data: {
-    example: JSON.parse(fs.readFileSync("data/example.json", "utf8")),
+    example: {
+      en: JSON.parse(fs.readFileSync("data/example/en.json", "utf8")),
+      uk: JSON.parse(fs.readFileSync("data/example/uk.json", "utf8"))
+    },
     lang: {
-      en: JSON.parse(fs.readFileSync("data/lang/en.json", "utf8"))
+      en: JSON.parse(fs.readFileSync("data/lang/en.json", "utf8")),
+      uk: JSON.parse(fs.readFileSync("data/lang/uk.json", "utf8"))
     }
   },
   var: {

@@ -1,0 +1,17 @@
+{
+    "lang": "en",
+    "sheets": [
+        {
+            "title": "Strengths, Weaknesses, Opportunities and Threats",
+            "description": "online analysis",
+            "internal": {
+                "positive": "* What advantages does your organization have?\n* What do you do better than anyone else?\n* What unique or lowest-cost resources can you draw upon that others can't?\n* What do people in your market see as your strengths?\n* What factors mean that you \"get the sale\"?\n* What is your organization's [Unique Selling Proposition](https://en.wikipedia.org/wiki/Unique_selling_proposition) (USP)?",
+                "negative": "1. What could you improve?\n2. What should you avoid?\n3. What are people in your market likely to see as weaknesses?\n4. What factors lose you sales?"
+            },
+            "external": {
+                "positive": "1. What good opportunities can you spot?\n2. What interesting trends are you aware of?\n\nUseful opportunities can come from such things as:\n\n* Changes in technology and markets on both a broad and narrow scale.\n* Changes in government policy related to your field.\n* Changes in social patterns, population profiles, lifestyle changes, and so on.\n* Local events.",
+                "negative": "* What obstacles do you face?\n* What are your competitors doing?\n* Are quality standards or specifications for your job, products or services changing?\n* Is changing technology threatening your position?\n* Do you have bad debt or cash-flow problems?\n* Could any of your weaknesses seriously threaten your business?"
+            }
+        }
+    ]
+}

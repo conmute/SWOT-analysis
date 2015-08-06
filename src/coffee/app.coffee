@@ -216,9 +216,17 @@ $ ->
       form.unbind 'submit', changeSheetTitles
       form.on 'submit', createNewSheet
       dialog.options.onDialogClose = -> return undefined
+
+      form
+        .addClass "create"
+        .removeClass "edit"
       return
 
     form = $("form#add-new")
+
+    form
+      .removeClass "create"
+      .addClass "edit"
 
     # placeholder fix
     descriptionInput.trigger 'focus'

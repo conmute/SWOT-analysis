@@ -1,7 +1,7 @@
 {
     "site": {
         "title": "Strengths, Weaknesses, Opportunities and Threats. Online analysis",
-        "copyrights": "Developed by&nbsp;<a href=\"http://www.conmute.com\" target=\"_blank\">conmute.com</a>"
+        "copyrights": "Created by <a href=\"http://www.conmute.com\" target=\"_blank\">conmute.com</a>"
     },
     "heading": {
         "aside": "Available sheets:"
@@ -9,6 +9,35 @@
     "button": {
         "create_new": "Create new",
         "save": "Save",
-        "import": "Import"
+        "import": "Import",
+        "delete": "Delete",
+        "edit_title": "Edit title"
+    },
+    "section_title": {
+        "internal": {
+            "positive": "<span>S</span>trengths",
+            "negative": "<span>W</span>eaknesses"
+        },
+        "external": {
+            "positive": "<span>O</span>pportunities",
+            "negative": "<span>T</span>hreats"
+        }
+    },
+    "form": {
+        "header": {
+            "create": "Create new sheet",
+            "edit": "Edit sheet title"
+        },
+        "title": {
+            "label": "Sheet title",
+            "informer": "Desired name of the sheet",
+            "placeholder": "Input title"
+        },
+        "description": {
+            "label": "Sheet description",
+            "informer": "Short information",
+            "placeholder": "Input description"
+        },
+        "submit": "Submit"
     }
 }

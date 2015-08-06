@@ -30,9 +30,9 @@ body
         span.list-title
         span.list-subtitle
         span.list-remark
-          a.edit-title(href="#") Edit title
+          a.edit-title(href="#")= lang.button.edit_title
           | |
-          a.delete(href="#") Delete
+          a.delete(href="#")= lang.button.delete
 
       .listview-outlook
         .list
@@ -41,9 +41,9 @@ body
               span.list-title= sheet.title
               span.list-subtitle= sheet.description
               span.list-remark
-                a.edit-title(href="#") Edit title
+                a.edit-title(href="#")= lang.button.edit_title
                 | |
-                a.delete(href="#") Delete
+                a.delete(href="#")= lang.button.delete
 
       button.button.small-button.create-new(onclick="showDialog()")
         span.mif-plus &nbsp;
@@ -61,38 +61,40 @@ body
             span.mif-file-upload
             | #{lang.button.import}
 
-        //- a.import.button.small-button(href="#")
-        //-   span.mif-file-upload &nbsp;
-        //-   | #{lang.button.import}
-
       footer.root
 
         p.copy!= lang.site.copyrights
 
     div#dialog(data-role="dialog" data-close-button="true" data-overlay="true"
       data-overlay-color="op-dark")
-      h2= lang.button.create_new
-      form#add-new(data-role="validator" data-on-submit="return false")
+
+      form#add-new.create(data-role="validator" data-on-submit="return false")
+
+        h2.create= lang.form.header.create
+        h2.edit= lang.form.header.edit
+
         .input-control.modern.text
           input(type='text' name="title" data-validate-func="minlength"
             data-validate-arg="6")
           span.label
-            | Sheet title
+            | #{lang.form.title.label}
             span.required *
-          span.informer Desired name of new sheet
+          span.informer= lang.form.title.informer
           span.placeholder
-            | Input title
+            | #{lang.form.title.placeholder}
             span.required *
           span.input-state-error.mif-warning
           span.input-state-success.mif-checkmark
+
         .input-control.modern.text
           input(type='text' name="description")
           span.label
-            | Sheet description
-          span.informer Short information
+            | #{lang.form.description.label}
+          span.informer= lang.form.description.informer
           span.placeholder
-            | Input description
-        button.button(type="submit") Submit
+            | #{lang.form.description.placeholder}
+
+        button.button(type="submit")= lang.form.submit
 
     section.root
 
@@ -102,21 +104,21 @@ body
         .external-label(data-text="external")
 
         section.internal.positive
-          header <span>S</span>trengths
+          header!= lang.section_title.internal.positive
           div.editor!= example.sheets[0].internal.positive
           article
 
         section.internal.negative
-          header <span>W</span>eaknesses
+          header!= lang.section_title.internal.negative
           div.editor!= example.sheets[0].internal.negative
           article
 
         section.external.positive
-          header <span>O</span>pportunities
+          header!= lang.section_title.external.positive
           div.editor!= example.sheets[0].external.positive
           article
 
         section.external.negative
-          header <span>T</span>hreats
+          header!= lang.section_title.external.negative
           div.editor!= example.sheets[0].external.negative
           article
