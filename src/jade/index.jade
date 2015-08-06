@@ -5,7 +5,8 @@ head
   meta(name="viewport" content="width=device-width, initial-scale=1")
   title= lang.site.title
   link(rel="stylesheet" href="/css/#{assets.app.css}")
-  script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+  script.
+    lang = "en"
   script(src="/js/#{assets.app.js}")
 body
 
@@ -25,31 +26,73 @@ body
 
       header= lang.heading.aside
 
+      figure.list-content.template
+        span.list-title
+        span.list-subtitle
+        span.list-remark
+          a.edit-title(href="#") Edit title
+          | |
+          a.delete(href="#") Delete
+
       .listview-outlook
         .list
           each sheet in example.sheets
-            a.list-content
+            figure.list-content.active
               span.list-title= sheet.title
-              //- span.list-subtitle= sheet.description
-              span.list-remark= sheet.description
+              span.list-subtitle= sheet.description
+              span.list-remark
+                a.edit-title(href="#") Edit title
+                | |
+                a.delete(href="#") Delete
 
-      button.button.small-button.create-new
+      button.button.small-button.create-new(onclick="showDialog()")
         span.mif-plus &nbsp;
         | #{lang.button.create_new}
 
       div.button-group
 
-        a.size6.save.button.small-button(href="#")
+        a.save.button.small-button(href="#")
           span.mif-file-download &nbsp;
           | #{lang.button.save}
 
-        a.size6.import.button.small-button(href="#")
-          span.mif-file-upload &nbsp;
-          | #{lang.button.import}
+        label.import.button.small-button(data-role="input")
+          input(type="file")
+          a
+            span.mif-file-upload
+            | #{lang.button.import}
+
+        //- a.import.button.small-button(href="#")
+        //-   span.mif-file-upload &nbsp;
+        //-   | #{lang.button.import}
 
       footer.root
 
         p.copy!= lang.site.copyrights
+
+    div#dialog(data-role="dialog" data-close-button="true" data-overlay="true"
+      data-overlay-color="op-dark")
+      h2= lang.button.create_new
+      form#add-new(data-role="validator" data-on-submit="return false")
+        .input-control.modern.text
+          input(type='text' name="title" data-validate-func="minlength"
+            data-validate-arg="6")
+          span.label
+            | Sheet title
+            span.required *
+          span.informer Desired name of new sheet
+          span.placeholder
+            | Input title
+            span.required *
+          span.input-state-error.mif-warning
+          span.input-state-success.mif-checkmark
+        .input-control.modern.text
+          input(type='text' name="description")
+          span.label
+            | Sheet description
+          span.informer Short information
+          span.placeholder
+            | Input description
+        button.button(type="submit") Submit
 
     section.root
 
@@ -62,43 +105,18 @@ body
           header <span>S</span>trengths
           div.editor!= example.sheets[0].internal.positive
           article
-            //- ul
-            //-   li Our workers are well-educated students who love books
-            //-   li The space us attratuve abd ibviting
-            //-   li Long-term lease is at low rate
-            //-   li Customers are suppportive of small bookstores
-            //-   li Popular cafe makes it easy for customers to linger and find something to buy
-
 
         section.internal.negative
           header <span>W</span>eaknesses
           div.editor!= example.sheets[0].internal.negative
           article
-            //- ol
-            //-   li Space is tight
-            //-   li Bank gave us a limited line of credit
-            //-   li Health insurance costs are rising
-            //-   li Business is slower during summer vacation
-            //-   li Inventory system needs to be upgraded
-            //-   li High staff turnover due to studens graduating
 
         section.external.positive
           header <span>O</span>pportunities
           div.editor!= example.sheets[0].external.positive
           article
-            //- ol
-            //-   li We can have local authors give lectures and book signings
-            //-   li We can make personalaized recommendations to long-term customers
-            //-   li We can deliver the same-day to mobility-impaired customers
-            //-   li We can features things that appeal to summer tourists
-            //-   li We can start a frequent buyer program
 
         section.external.negative
           header <span>T</span>hreats
           div.editor!= example.sheets[0].external.negative
           article
-            //- ul
-            //-   li Large chains have more buying power
-            //-   li E-books and e-book readers eliminate need for physical books
-            //-   li Younger generations don`t read as much
-            //-   li Nearby public library reopened after 2-year remodel

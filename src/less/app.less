@@ -81,6 +81,27 @@ aside.root {
     line-height: 2rem;
     border-bottom: 1px solid @grayLighter;
   }
+  .list {
+    &:hover {
+      background-color: white;
+    }
+    .list-content {
+      padding-top: .625rem;
+      padding-bottom: .625rem;
+      .list-title {
+        line-height: 1.5rem;
+      }
+      .list-subtitle {
+        color: @grayLight;
+      }
+      a.delete {
+        color: @darkRed;
+      }
+      &:hover, &:active, &:focus, &.active {
+        background-color: @grayLighter;
+      }
+    }
+  }
 }
 section.root {
   padding-left: 0;
@@ -149,6 +170,10 @@ section.root {
       }
       article {
         display: none;
+      }
+      header {
+        border-bottom-width: 5px;
+        margin-bottom: -4px;
       }
     }
   }
@@ -269,11 +294,23 @@ footer.root {
 .button-group {
   width: 100%;
   display: table;
-  .button {
+  & > .button {
     display: table-cell;
     padding-bottom: 0;
     padding-top: 0;
     position: relative;
+    &.import {
+      position: relative;
+      overflow: hidden;
+      input {
+        position: absolute;
+        top: 0;
+        left: -99999px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+      }
+    }
     &:hover, &:active, &:focus {
       z-index: 1;
     }
@@ -285,4 +322,9 @@ footer.root {
   padding-left: 0;
   padding-right: 0;
   width: 100%;
+}
+
+.template {
+  display: none;
+  visibility: hidden;
 }

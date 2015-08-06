@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     coffeelint = require('gulp-coffeelint'),
     lintThreshold = require('gulp-coffeelint-threshold'),
     colors = require('colors'),
-    path = require('path');
+    path = require('path'),
+    removeLines = require('gulp-remove-lines');
 
 var lintThresholdHandler = function(numberOfWarnings, numberOfErrors) {
   var msg;
@@ -45,6 +46,7 @@ var check_existance_missing = function (array_of_urls) {
 };
 
 include_from_bower = [
+  './bower_components/jquery/dist/jquery.min.js',
   './bower_components/markdown/lib/markdown.js',
   './bower_components/ace-builds/src-min-noconflict/ace.js',
   './bower_components/ace-builds/src-min-noconflict/ace.js',
@@ -54,7 +56,10 @@ include_from_bower = [
   './bower_components/metro/js/global.js',
   './bower_components/metro/js/widget.js',
   './bower_components/metro/js/initiator.js',
-  './bower_components/metro/js/widgets/charm.js'
+  './bower_components/metro/js/utils/easing.js',
+  './bower_components/metro/js/widgets/charm.js',
+  './bower_components/metro/js/widgets/dialog.js',
+  './bower_components/metro/js/widgets/validator.js'
   // './bower_components/Hyphenator/Hyphenator.js',
   // './bower_components/Hyphenator/patterns/en-us.js',
   // './bower_components/Hyphenator/patterns/uk.js'
@@ -66,7 +71,10 @@ gulp.task('coffee', 'compiles project coffeescript files', function() {
     return;
   }
 
-  jsfiles = gulp.src([].concat(include_from_bower));
+  jsfiles = gulp.src([].concat(include_from_bower))
+    .pipe(removeLines({'filters': [
+      /sourceMappingURL/
+    ]}));
 
   src = [globals.src.coffee + '**/*.coffee']
 
